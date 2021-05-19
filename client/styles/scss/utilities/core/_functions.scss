@@ -1,0 +1,48 @@
+
+// Safely return a value from a map.
+// @param {Map} $map - Map to retrieve a value from.
+// @param {String} $key - Name of the map key.
+// @returns {List} Found value.
+@function map-safe-get($map, $key) {
+    @if (type-of($map) == 'map' or (type-of($map) == 'list' and length($map) == 0)) {
+        @if (map-has-key($map, $key)) {
+            @return map-get($map, $key);
+        } @else {
+            @error 'There is no key `#{$key}` in the list of keys `#{map-keys($map)}`';
+        }
+    } @else {
+        @error '`#{$map}` is not a valid map';
+    }
+}
+
+// Return svg icon code
+// @param {Map} $map - Map to retrieve a value from.
+// @param {Color} $fill-color - color of icon. #222 set by default.
+// @returns {String} encoded svg icon code.
+@function svg-icon-get($icon-map, $fill-color: #222) {
+    $path: map-safe-get($icon-map, 'path');
+    $sizeY: map-safe-get($icon-map, 'sizeY');
+    $sizeX: map-safe-get($icon-map, 'sizeX');
+    $fill-color: str-slice(inspect($fill-color), 2);
+    $fill-color: '%23' + $fill-color;
+    $fill-rule: '';
+    $icon: 'data:image/svg+xml;charset=utf8,%3Csvg xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22 viewBox%3D%220 0 #{$sizeX} #{$sizeY}%22%3E'; // sass-lint:disable-line max-line-length
+
+    @if (map-has-key($icon-map, fill-rule)) {
+        $fill-rule: map-safe-get($icon-map, 'fill-rule');
+        $fill-rule: 'fill-rule%3D%22#{$fill-rule}%22';
+    }
+
+    @if type_of($path) == 'map' {
+        @for $i from 1 through length($path) {
+            $item: map-safe-get($path, $i);
+            $icon: $icon + '%3Cpath fill%3D%22#{$fill-color}%22 #{$fill-rule} d%3D%22#{$item}%22%2F%3E';
+        }
+    } @else {
+        $icon: $icon + '%3Cpath fill%3D%22#{$fill-color}%22 #{$fill-rule} d%3D%22#{$path}%22%2F%3E';
+    }
+
+    $icon: $icon + '%3C%2Fsvg%3E';
+
+    @return $icon;
+}

@@ -1,0 +1,58 @@
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "account";
+@import "../login";
+
+.profile-back-to-account-link {
+    display: block;
+    color: $pink;
+    text-decoration: underline;
+    padding-bottom: 30px;
+}
+
+.edit-profile-form {
+    .date-dropdowns {
+        .date-dropdown {
+            width: 80px;
+            height: 40px;
+            border-radius: 5px;
+            border: solid 1px #f4f4f4;
+            background-color: $white;
+
+            option[data-default] {
+                color: #c5c5c5;
+            }
+        }
+
+        .date-separator {
+            margin: 0 9px;
+            font-size: 14px;
+            font-weight: 300;
+            color: $pink;
+        }
+    }
+
+    .tracking-consent {
+        margin-top: 20px;
+        text-align: center;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: 300;
+        color: $pink;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 30px;
+        }
+    }
+}
+
+.address-form {
+    .form-group-state {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,200 @@
+.product-recommendation {
+    background-color: rgba($pink, 0.1);
+    margin: 60px 0 0;
+
+    @include media-breakpoint-up(lg) {
+        margin: 100px 0 0;
+    }
+
+    .slick-slider {
+        display: flex;
+        flex-direction: column;
+        padding: 45px 0 30px;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            padding: 75px 0 80px;
+        }
+    }
+
+    .slick-prev,
+    .slick-next {
+        @extend %i-icon;
+
+        width: 18px;
+        height: 18px;
+        transform: translate(0, 0);
+
+        @include media-breakpoint-up(md) {
+            width: 30px;
+            height: 30px;
+        }
+
+        &.slick-arrow::before {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 8px;
+            height: 8px;
+            transform: translate(-50%, -50%);
+
+            @include media-breakpoint-up(md) {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &.slick-arrow:hover::after {
+            border: solid 1px $pink;
+        }
+
+        &.slick-arrow::after {
+            content: "";
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: rotate(45deg);
+            border: solid 1px $grey7;
+
+            @include media-breakpoint-up(md) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        &.slick-disabled::after,
+        &.slick-disabled:hover::after {
+            border: solid 1px $light-silver;
+        }
+    }
+
+    .slick-prev {
+        @include icon-arrow-left();
+
+        &:hover {
+            @include icon-arrow-left--coral();
+        }
+
+        &.slick-disabled:hover {
+            @include icon-arrow-left();
+        }
+
+        order: 1;
+        position: absolute;
+        top: 0;
+        right: 50px;
+        left: auto;
+
+        @include media-breakpoint-up(md) {
+            right: 70px;
+        }
+    }
+
+    .slick-next {
+        @include icon-arrow-right();
+
+        &:hover {
+            @include icon-arrow-right--coral();
+        }
+
+        &.slick-disabled:hover {
+            @include icon-arrow-right();
+        }
+
+        order: 2;
+        position: absolute;
+        top: 0;
+        right: 18px;
+        left: auto;
+
+        @include media-breakpoint-up(md) {
+            right: 20;
+        }
+    }
+
+    .product-tile {
+        background-color: $white;
+        border: 0;
+        margin: 0 15px;
+        position: relative;
+
+        @include media-breakpoint-up(md) {
+            min-height: 280px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            min-height: 400px;
+        }
+
+        .bottom-sheet {
+            background-color: rgba($white, 0.95);
+            bottom: 0;
+            display: none;
+            padding: 15px;
+            position: absolute;
+            width: 100%;
+        }
+
+        &:hover .bottom-sheet,
+        &:focus .bottom-sheet {
+            display: block;
+        }
+
+        .tile-image {
+            width: 100%;
+
+            @include media-breakpoint-up(md) {
+                height: 100%;
+                object-fit: cover;
+                width: auto;
+            }
+        }
+
+        .tile-body {
+            font-family: $font-family-barlow;
+            padding: 0;
+
+            .product-name {
+                color: $black;
+                font-size: 18px;
+                font-weight: 300;
+                text-align: left;
+            }
+
+            .price {
+                color: $pink;
+                font-size: 20px;
+                font-weight: 600;
+                text-align: right;
+            }
+
+            .add-to-cart {
+                background-color: $pink;
+                color: $white;
+                font-family: $font-family-barlow;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.product-recommendation-title {
+    color: $pink;
+    overflow: hidden;
+    padding: 20px 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 300;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        font-size: 30px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 35px;
+        padding: 50px 130px;
+    }
+}

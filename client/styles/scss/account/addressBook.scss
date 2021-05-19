@@ -1,0 +1,19 @@
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "account";
+
+@include account-nav();
+@include account-card();
+
+.add-address-button {
+    margin-top: 20px;
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+
+    @include media-breakpoint-up(md) {
+        padding: 14px 50px;
+    }
+}

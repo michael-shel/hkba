@@ -1,0 +1,70 @@
+.agent-login {
+    @include media-breakpoint-down(md) {
+        .agent-buttons-block {
+            margin-top: 16px;
+
+            .btn-agent {
+                min-height: 50px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.agent-user-list {
+    border: 1px solid $grey2;
+
+    @include media-breakpoint-down(sm) {
+        .btn-agent {
+            display: block;
+            width: 100%;
+            margin-top: 16px;
+        }
+    }
+
+    .row-agent {
+        border-bottom: 1px solid $grey2;
+        padding: 10px 0;
+        font-size: 16px;
+
+        @include media-breakpoint-only(md) {
+            font-size: 12px;
+
+            > div {
+                overflow: scroll;
+            }
+        }
+
+        &:nth-of-type(odd) {
+            background-color: $grey1;
+        }
+
+        &:first-child {
+            font-weight: 500;
+            text-transform: uppercase;
+
+            @include media-breakpoint-only(md) {
+                font-size: 14px;
+            }
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .agent-border-list-mobile {
+        width: 100%;
+        height: 1px;
+        background: $grey2;
+    }
+}
+
+.clear-search-customers {
+    border: 2px solid $black;
+
+    &:hover {
+        background: $black;
+        color: $white;
+    }
+}

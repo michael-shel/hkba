@@ -1,9 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import ARTICLE_QUERY from '../apollo/ArticleQuery'
+
 import Query from '../components/Query.component';
 import Card from '../components/Card.component';
 import { HomeHeroSVG, SVGOne, SVGTwo } from '../SVGS/SVGS'
+import MediaAsset from '../components/MediaAsset.component';
 
 export default function Home() {
   return (

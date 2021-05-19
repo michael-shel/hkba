@@ -1,0 +1,55 @@
+@import "../variables";
+@import "bootstrap/scss/functions";
+@import "checkoutComponents";
+@import "progressBarCheckout";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "../components/formFields";
+
+.login-oauth {
+    margin-top: 1rem;
+}
+
+.card-header {
+    padding-left: 0;
+}
+
+.card-body {
+    padding-left: 0;
+}
+
+.total-items-label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.total-price {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.returning-customer {
+    .oauth-google {
+        background-color: #d5423c;
+        color: $white;
+    }
+
+    .oauth-facebook {
+        background-color: #4267b2;
+        color: $white;
+    }
+
+    .fa {
+        color: $white;
+        font-size: 19px;
+        margin-right: 5px;
+    }
+}
+
+h2 {
+    font-family: $font-family-barlow;
+    font-weight: 300;
+    font-size: 35px;
+    letter-spacing: 0;
+    color: $pink;
+}

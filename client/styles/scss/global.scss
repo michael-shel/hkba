@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&family=Satisfy&family=Source+Sans+Pro:wght@300;600;700&display=swap');
+
+@import "variables";
+@import "bootstrap-custom-import";
+@import "bootstrapOverrides";
+@import "slick-carousel-import";
+@import "utilities/responsiveUtils";
+@import "utilities/core/settings";
+@import "font-awesome/scss/font-awesome"; //TODO: Will be deleted later
+@import "components/icons";
+@import "components/buttons";
+@import "components/common";
+@import "components/header";
+@import "components/footer";
+@import "components/hero";
+@import "components/headers";
+@import "components/notification";
+@import "components/pricing";
+@import "components/productTiles";
+@import "components/productRecommendation";
+@import "components/tabs";
+@import "components/breadcrumb";
+@import "components/spinner";
+@import "./miniCart";
+@import "components/tooltip";
+@import "components/headerSearch";
+@import "components/collapsibleItem";
+@import "pages/content";
+@import "components/customRadio";
+@import "components/agentUser";

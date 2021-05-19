@@ -1,0 +1,171 @@
+@import "../variables";
+@import "../checkout/checkoutComponents";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "../checkout/checkout";
+
+#maincontent {
+    padding-top: 0;
+}
+
+.section-label {
+    font-size: $receipt-font-size;
+    font-weight: bolder;
+}
+
+.my-account {
+    text-align: center;
+    margin-bottom: 0.938em;
+}
+
+.confirm-details {
+    &-summary {
+        margin-bottom: 30px;
+
+        .summary-section-label {
+            font-size: 16px;
+            font-weight: 600;
+
+            @include media-breakpoint-up(md) {
+                font-size: 20px;
+            }
+        }
+
+        .summary-details {
+            font-size: 14px;
+            font-weight: 300;
+
+            @include media-breakpoint-up(md) {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &-shipping {
+        margin-bottom: 30px;
+
+        .firstName,
+        .lastName {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 3px;
+
+            @include media-breakpoint-up(md) {
+                font-size: 20px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &-billing {
+        .summary-details {
+            margin-bottom: 30px;
+        }
+    }
+
+    .summary-section-label {
+        font-size: 16px;
+        font-weight: 600;
+
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+        }
+    }
+}
+
+.my-account {
+    &-link {
+        font-size: 14px;
+        font-weight: 300;
+        color: $pink;
+
+        @include media-breakpoint-up(md) {
+            font-size: 18px;
+        }
+    }
+}
+
+.checkout-order-total-summary {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+
+    .card-header {
+        padding: 20px 15px 15px;
+
+        &-custom {
+            font-size: 16px;
+            font-weight: 600;
+            color: $black;
+        }
+    }
+
+    .card-body {
+        padding: 0 15px;
+    }
+
+    .summary-content {
+        padding: 15px 0;
+        border-bottom: 1px solid $grey1;
+        border-top: 1px solid $grey1;
+    }
+
+    .line-grand-total {
+        padding: 20px 0 0;
+    }
+
+    .number-of-items {
+        font-size: 16px;
+        font-weight: 600;
+
+        @include media-breakpoint-up(md) {
+            font-size: 20px;
+        }
+    }
+}
+
+.summary-label {
+    font-size: 14px;
+    font-weight: 500;
+
+    @include media-breakpoint-up(md) {
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
+
+.summary-value {
+    font-size: 14px;
+    font-weight: 500;
+
+    @include media-breakpoint-up(md) {
+        font-size: 16px;
+        font-weight: 300;
+    }
+}
+
+.grand-total {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: right;
+    color: $black;
+
+    @include media-breakpoint-up(md) {
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
+
+.order-product-summary {
+    .summary-header {
+        border-bottom: 1px solid $grey1;
+
+        .summary-label {
+            font-size: 16px;
+            font-weight: 300;
+        }
+
+        .number-of-items {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+}

@@ -51,7 +51,6 @@ const Blog = () => {
                     </div>
                     <Query slug query={ARTICLE_QUERY('blog')}>
                         {({ data }) => {
-                            console.log(data);
                             return data.blogArticles.map(Blog => {
                                 return <Card key={Blog.slug} article={Blog} />
                             })

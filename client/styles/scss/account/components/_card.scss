@@ -1,0 +1,64 @@
+@mixin account-card() {
+    .card {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        &-header {
+            margin-bottom: 10px;
+            padding: 0;
+
+            &-custom {
+                font-size: 16px;
+                font-weight: 600;
+                color: $black;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 20px;
+                }
+            }
+
+            &-separator {
+                border-top: 1px solid $horizontal-rule-grey;
+            }
+        }
+
+        &-body {
+            flex-grow: 1;
+            margin-bottom: 10px;
+            padding: 0;
+            font-size: 14px;
+            font-weight: 300;
+            color: $black;
+
+            @include media-breakpoint-up(md) {
+                font-size: 18px;
+                font-weight: 300;
+            }
+        }
+
+        &-footer {
+            margin-bottom: 30px;
+            padding: 0;
+
+            @include media-breakpoint-up(md) {
+                margin-bottom: 50px;
+            }
+
+            &-separator {
+                margin: 0 10px;
+            }
+
+            &-link,
+            &-separator {
+                font-size: 14px;
+                font-weight: 600;
+                color: $pink;
+
+                @include media-breakpoint-up(md) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

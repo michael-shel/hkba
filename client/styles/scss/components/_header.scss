@@ -1,0 +1,865 @@
+@import "menu";
+
+$sticky: '.sticky';
+$transparent: '.transparent';
+$transparent-sticky: '.transparent.sticky';
+
+.checkout-header {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    padding: 22px;
+    background: white;
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+
+    .logo-section {
+        border-right: 1px solid $grey4;
+    }
+}
+
+.header {
+    min-height: 50px;
+    position: relative;
+    z-index: 3;
+
+    &#{$transparent} {
+        min-height: auto;
+    }
+
+    @include media-breakpoint-up(lg) {
+        min-height: 155px;
+    }
+}
+
+.header-wrapper {
+    @include when-inside($transparent) {
+        background: none;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    @include when-inside($sticky) {
+        background-color: $white;
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.3);
+        left: 0;
+        right: 0;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+
+        @include media-breakpoint-up(md) {
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    background-color: $white;
+
+    .container {
+        @include media-breakpoint-up(lg) {
+            @include when-inside($sticky) {
+                max-width: 1680px;
+            }
+        }
+    }
+}
+
+.header-inner {
+    @include media-breakpoint-up(lg) {
+        @include when-inside($sticky) {
+            box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+.header-container {
+    @include when-inside($transparent) {
+        flex-wrap: wrap;
+    }
+
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+
+    @include media-breakpoint-up(md) {
+        padding: 31px 0;
+
+        @include when-inside($sticky) {
+            padding: 0;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include when-inside($sticky) {
+            align-items: center;
+        }
+
+        flex-wrap: wrap;
+        padding: 0;
+    }
+}
+
+.header-actions {
+    @include media-breakpoint-up(md) {
+        display: flex;
+        flex-basis: 255px;
+        justify-content: flex-end;
+        order: 2;
+
+        @include when-inside($sticky) {
+            flex-basis: 255px;
+            order: 2;
+            margin: 0;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        flex: 0 1 33%;
+        margin: 20px 0 0;
+        order: 0;
+
+        @include when-inside($sticky) {
+            flex-basis: 275px;
+            order: 2;
+            margin: 0;
+        }
+    }
+
+    display: none;
+
+    .header-actions-body {
+        display: flex;
+        flex: 0 0 255px;
+        justify-content: space-between;
+
+        @include media-breakpoint-up(md) {
+            @include when-inside($sticky) {
+                flex: 0 0 195px;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include when-inside($sticky) {
+                flex: 0 0 100%;
+            }
+
+            flex: 0 0 385px;
+        }
+    }
+
+    .header-actions-item {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .country-selector {
+        @include when-inside($sticky) {
+            display: none;
+        }
+
+        outline: none;
+
+        &:hover {
+            .dropdown-country-selector {
+                display: block;
+
+                .dropdown-title {
+                    border-radius: 15px 0 15px 15px;
+                }
+
+                &.show .dropdown-title {
+                    border-radius: 15px 0 0;
+                }
+
+                .dropdown-menu-inner {
+                    display: none;
+                }
+
+                &.show .dropdown-menu-inner {
+                    display: block;
+                }
+            }
+
+            .dropdown-menu {
+                background: none;
+
+                &.show {
+                    background: $white;
+                }
+            }
+        }
+
+        .flag-icon {
+            background-size: cover;
+            border-radius: 50%;
+            height: 24px;
+            width: 24px;
+
+            @include media-breakpoint-up(lg) {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+            }
+        }
+
+        .country-selector-title {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+
+        .country-selector-label {
+            align-items: center;
+            font-size: 16px;
+            font-weight: 300;
+            text-transform: none;
+            width: 100%;
+        }
+
+        .icon-base {
+            @extend %icon-arrow-down;
+
+            @include when-inside($transparent) {
+                @extend %icon-arrow-down--white;
+            }
+
+            @include when-inside($transparent-sticky) {
+                @extend %icon-arrow-down;
+            }
+
+            height: 11px;
+            margin: 0 0 0 5px;
+            width: 11px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            border-radius: 15px 0 0;
+            left: auto !important;
+            padding: 0;
+            right: 0;
+            top: calc(100% + 13px) !important;
+            transform: none !important;
+
+            &::before {
+                border-style: solid;
+                border-width: 0 9.5px 13px;
+                border-color: transparent transparent $slightly-pink transparent;
+                content: '';
+                display: block;
+                height: 0;
+                position: absolute;
+                right: 0;
+                top: -13px;
+                width: 0;
+            }
+        }
+
+        .dropdown-menu-inner {
+            border-radius: 0 0 15px 15px;
+            height: 70vh;
+            overflow: auto;
+            padding: 10px 20px;
+        }
+
+        .dropdown-title {
+            background: $slightly-pink;
+            border-radius: 15px 0 0;
+            color: $pink;
+            font-size: 16px;
+            font-weight: 300;
+            margin: 0;
+            padding: 13px 20px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .dropdown-item {
+            font-size: 18px;
+            font-weight: 300;
+            padding: 5px 0;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            &:hover {
+                background: none;
+                color: $black;
+            }
+        }
+    }
+
+    .header-actions-icon {
+        height: 25px;
+        width: 25px;
+    }
+
+    .header-actions-label {
+        @include when-inside($transparent) {
+            color: $white;
+            text-shadow: 0 2px 4px rgba($black, 0.5);
+        }
+
+        @include when-inside($transparent-sticky) {
+            color: $black;
+            text-shadow: none;
+        }
+
+        margin: 0;
+
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+
+        @include media-breakpoint-up(lg) {
+            display: none;
+
+            @include when-inside($sticky) {
+                font-size: 16px;
+                margin: 5px 0 0;
+            }
+        }
+    }
+
+    .i-pin {
+        @include when-inside($transparent) {
+            @extend %icon-pin--white;
+        }
+
+        @include when-inside($transparent-sticky) {
+            @extend %icon-pin;
+        }
+    }
+
+    .i-profile {
+        @include when-inside($transparent) {
+            @extend %icon-profile--white;
+        }
+
+        @include when-inside($transparent-sticky) {
+            @extend %icon-profile;
+        }
+    }
+
+    .i-heart {
+        @include when-inside($transparent) {
+            @extend %icon-heart--white;
+        }
+
+        @include when-inside($transparent-sticky) {
+            @extend %icon-heart;
+        }
+    }
+
+    .i-bag {
+        @include when-inside($transparent) {
+            @extend %icon-bag--white;
+        }
+
+        @include when-inside($transparent-sticky) {
+            @extend %icon-bag;
+        }
+    }
+
+    // TODO: '.user' - will be refactored later
+    .user,
+    .stores,
+    .minicart {
+        position: relative;
+
+        .popover {
+            display: none;
+            background: none;
+            left: auto;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: calc(100% + 13px);
+
+            a {
+                font-size: 18px;
+                font-weight: 300;
+                text-transform: uppercase;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            &--triangle::before {
+                border-style: solid;
+                border-width: 0 9.5px 13px;
+                border-color: transparent transparent $slightly-pink transparent;
+                content: '';
+                display: block;
+                height: 0;
+                position: absolute;
+                right: 0;
+                top: -13px;
+                width: 0;
+            }
+
+            &::after {
+                content: '';
+                height: 13px;
+                left: 0;
+                position: absolute;
+                right: 0;
+                top: -13px;
+                width: 100%;
+            }
+
+            &.show {
+                display: block;
+            }
+
+            .nav {
+                padding: 10px 20px;
+                background: $white;
+                border-radius: 0 0 15px 15px;
+            }
+
+            .nav-item {
+                padding: 5px 0;
+            }
+        }
+
+        .popover-title {
+            background: $slightly-pink;
+            border-radius: 15px 0 0;
+            color: $pink;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+            padding: 13px 20px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .stores,
+    .minicart {
+        .popover-title {
+            border-radius: 15px 0 15px 15px;
+            font-weight: 300;
+            text-transform: initial;
+        }
+    }
+
+    .user {
+        .popover {
+            a {
+                font-size: 18px;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+.header-menu {
+    @include when-inside($sticky) {
+        margin-right: auto;
+        order: 1;
+    }
+}
+
+.header-logo-wrapper {
+    @include when-inside($transparent) {
+        order: -1;
+        width: 100%;
+        margin: 15px 0 0;
+    }
+
+    @include when-inside($sticky) {
+        margin: 0 15px 0 0;
+        order: 0;
+        width: 42px;
+    }
+
+    @include media-breakpoint-up(md) {
+        @include when-inside($transparent) {
+            margin: 0 95px 0 0;
+            order: 1;
+            width: auto;
+        }
+
+        @include when-inside($sticky) {
+            margin: 0 15px 0 0;
+            order: 0;
+            width: 62px;
+        }
+
+        order: 1;
+        margin: 0 95px 0 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        @include when-inside($transparent) {
+            margin: 20px auto 0;
+            order: 0;
+            width: auto;
+        }
+
+        @include when-inside($sticky) {
+            flex-basis: 80px;
+            order: 0;
+            margin: 35px 0;
+        }
+
+        flex: 0 1 33%;
+        margin: 25px auto;
+        order: 0;
+    }
+
+    .header-logo-link {
+        @include when-inside($sticky) {
+            @include media-breakpoint-up(lg) {
+                align-items: start;
+            }
+        }
+
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header-logo-icon {
+        @include when-inside($transparent) {
+            height: 57px;
+            margin: 0 10px 0 0;
+        }
+
+        @include when-inside($sticky) {
+            height: 37px;
+            margin: 0 5px 0 0;
+        }
+
+        height: 37px;
+        margin: 0 5px 0 0;
+
+        @include media-breakpoint-up(md) {
+            height: 52px;
+
+            @include when-inside($sticky) {
+                height: 52px;
+                margin: 0 10px 0 0;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include when-inside($transparent) {
+                height: 73px;
+                margin: 0 15px 0 0;
+            }
+
+            @include when-inside($sticky) {
+                height: 50px;
+            }
+
+            height: 73px;
+            margin: 0 15px 0 0;
+        }
+    }
+
+    .header-logo-text {
+        @include when-inside($transparent) {
+            height: 48px;
+            margin: 7px 0 0;
+        }
+
+        @include when-inside($sticky) {
+            display: none;
+        }
+
+        height: 26px;
+        margin: 3px 0 0;
+
+        @include media-breakpoint-up(md) {
+            height: 44px;
+            margin: 3px 0 0;
+
+            @include when-inside($sticky) {
+                height: 44px;
+                margin: 3px 0 0;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            @include when-inside($transparent) {
+                height: 61px;
+            }
+
+            @include when-inside($sticky) {
+                display: none;
+            }
+
+            height: 61px;
+            margin: 7px 0 0;
+        }
+    }
+
+    .primary-logo {
+        @include when-inside($transparent) {
+            display: none;
+        }
+
+        @include when-inside($sticky) {
+            display: block;
+        }
+    }
+
+    .secondary-logo {
+        @include when-inside($transparent) {
+            display: block;
+        }
+
+        @include when-inside($sticky) {
+            display: none;
+        }
+    }
+
+    .primary-text {
+        @include when-inside($transparent) {
+            display: none;
+        }
+
+        @include when-inside($sticky) {
+            display: none;
+        }
+    }
+
+    .secondary-text {
+        @include when-inside($transparent) {
+            display: block;
+        }
+
+        @include when-inside($sticky) {
+            display: none;
+        }
+    }
+}
+
+.header-actions-mobile {
+    @include when-inside($sticky) {
+        @include media-breakpoint-down(md) {
+            order: 1;
+            margin-left: auto;
+        }
+
+        .header-actions-mobile-toggle-searchbar {
+            display: none;
+        }
+    }
+
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0 0 0 auto;
+    padding: 0;
+
+    @include media-breakpoint-up(md) {
+        margin: 0 auto 0 20px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+
+    .header-actions-mobile-item {
+        @include media-breakpoint-up(md) {
+            margin: 0;
+        }
+
+        &:last-child {
+            margin: 0;
+
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
+
+        margin: 0 15px 0 0;
+    }
+
+    .header-actions-mobile-link {
+        display: flex;
+        position: relative;
+    }
+
+    .header-actions-mobile-quantity {
+        @include when-inside($transparent) {
+            color: $white;
+        }
+
+        @include when-inside($transparent-sticky) {
+            color: $black;
+        }
+
+        position: absolute;
+        text-align: center;
+        top: 3px;
+        width: 100%;
+    }
+
+    .i-search {
+        @include when-inside($transparent) {
+            @extend %icon-search--white;
+        }
+
+        @include when-inside($transparent-sticky) {
+            @extend %icon-search;
+        }
+
+        height: 20px;
+        width: 20px;
+    }
+
+    .i-bag {
+        @include when-inside($transparent) {
+            @extend %icon-bag--white;
+        }
+
+        @include when-inside($transparent-sticky) {
+            @extend %icon-bag;
+        }
+
+        height: 25px;
+        width: 25px;
+    }
+}
+
+.header-actions-mobile {
+    @include media-breakpoint-up(md) {
+        .country-selector-mobile {
+            display: none;
+        }
+
+        .header-actions-mobile-minicart {
+            display: none;
+        }
+    }
+
+    .country-selector-mobile {
+        @include when-inside($sticky) {
+            display: none;
+        }
+
+        outline: none;
+
+        .flag-icon {
+            @include media-breakpoint-up(lg) {
+                box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+                margin-right: 16px;
+            }
+
+            background-size: cover;
+            border-radius: 50%;
+            height: 24px;
+            width: 24px;
+        }
+
+        .country-selector-title {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin-top: 3px;
+        }
+
+        .country-selector-label {
+            align-items: center;
+            font-size: 16px;
+            font-weight: 300;
+            text-transform: none;
+            width: 100%;
+        }
+
+        .icon-base {
+            @extend %icon-arrow-down;
+
+            @include when-inside($transparent) {
+                @extend %icon-arrow-down--white;
+            }
+
+            @include when-inside($transparent-sticky) {
+                @extend %icon-arrow-down;
+            }
+
+            height: 11px;
+            margin: 0 0 0 5px;
+            width: 11px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-country-selector {
+            background-color: $white;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+
+            .header-row {
+                background: $slightly-pink;
+                color: $pink;
+                font-size: 16px;
+                font-weight: 600;
+                margin: 0;
+                padding: 13px 20px;
+                text-transform: uppercase;
+                white-space: nowrap;
+                display: flex;
+
+                .close {
+                    margin-left: auto;
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+
+        .dropdown-menu-inner {
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+            height: 100%;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 50px;
+            background: white;
+            padding-bottom: 53px;
+        }
+
+        .dropdown-item {
+            font-size: 18px;
+            font-weight: 300;
+            padding: 5px 0;
+            text-transform: uppercase;
+            white-space: nowrap;
+
+            &:active {
+                color: #16181b;
+                text-decoration: none;
+                background-color: #f8f9fa;
+            }
+        }
+    }
+}

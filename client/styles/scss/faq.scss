@@ -1,0 +1,322 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.faq-banner {
+    position: relative;
+
+    .faq-banner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .faq-banner-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 150px;
+        position: relative;
+        z-index: 1;
+
+        @include media-breakpoint-up(md) {
+            min-height: 270px;
+        }
+
+        @include media-breakpoint-up(md) {
+            min-height: 350px;
+        }
+    }
+
+    .faq-banner-text {
+        color: $white;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(md) {
+            font-size: 35px;
+        }
+    }
+}
+
+.nav {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: flex;
+        margin: 85px 0 0;
+        padding-top: 15px;
+    }
+}
+
+.nav-item {
+    margin: 0 20px 0 0;
+
+    &:last-of-type {
+        margin: 0;
+    }
+}
+
+.nav-link {
+    border: 1px solid $grey1;
+    font-size: 20px;
+    padding: 14px 30px;
+
+    @include media-breakpoint-up(md) {
+        font-size: 16px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 20px;
+    }
+
+    &:hover,
+    &.active {
+        border-color: $white;
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+        font-weight: 600;
+    }
+}
+
+.tab-pane {
+    h3 {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 30px 0 10px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+            margin: 45px 0 20px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            font-size: 18px;
+            margin: 40px 0 15px;
+        }
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 18px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 16px;
+        }
+    }
+}
+
+.faq-select-block {
+    position: relative;
+    height: 60px;
+
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+
+    .faq-select {
+        background: none;
+        position: relative;
+        cursor: pointer;
+        -webkit-appearance: none;
+        appearance: none;
+        z-index: 2;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 30px 0 0;
+        width: 100%;
+        height: 60px;
+    }
+
+    .faq-select-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: 15px;
+        opacity: 0.4;
+        z-index: 1;
+    }
+
+    .faq-select-background {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        bottom: 0;
+        background: $white;
+        box-shadow: 0 0 25px -2px rgba(0, 0, 0, 0.1);
+        z-index: 0;
+    }
+}
+
+.faq-contact {
+    margin: 30px 0 60px;
+
+    @include media-breakpoint-up(md) {
+        margin: 30px 0 0;
+    }
+
+    .faq-contact-body {
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0 0 25px -2px rgba(0, 0, 0, 0.1);
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+            border: 1px solid $grey3;
+            box-shadow: none;
+        }
+    }
+
+    .faq-contact-body-col {
+        flex: 1 0 37%;
+
+        &:first-child {
+            flex: 1 0 auto;
+        }
+
+        &:last-child {
+            .faq-contact-inner {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .faq-contact-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        padding: 19px;
+
+        @include media-breakpoint-up(md) {
+            padding: 20px 15px 20px 30px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding: 20px 50px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            height: 1px;
+            width: 90%;
+            background-color: $grey3;
+            transform: translate(-50%, 0%);
+
+            @include media-breakpoint-up(md) {
+                top: 50%;
+                left: 100%;
+                height: 65px;
+                width: 1px;
+                transform: translate(0%, -50%);
+            }
+        }
+    }
+
+    .faq-contact-title {
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .faq-contact-item {
+        display: flex;
+        width: 100%;
+        height: 100%;
+    }
+
+    .faq-contact-icon {
+        flex: 0 0 23px;
+        margin-right: 10px;
+
+        @include media-breakpoint-up(md) {
+            flex: 0 0 30px;
+            margin-right: 20px;
+            align-self: center;
+        }
+
+        @include media-breakpoint-up(lg) {
+            flex: 0 0 50px;
+            margin-right: 45px;
+        }
+
+        .i-phone {
+            width: 23px;
+            height: 23px;
+
+            @include media-breakpoint-up(lg) {
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+        .i-mail {
+            width: 23px;
+            height: 23px;
+
+            @include media-breakpoint-up(lg) {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    }
+
+    .faq-contact-text {
+        font-weight: 600;
+        font-size: 14px;
+        flex: 1 1 auto;
+
+        .text-title {
+            color: $pink;
+            margin: 0;
+        }
+
+        .text-subtitle {
+            font-size: 16px;
+            margin: 0;
+
+            @include media-breakpoint-up(md) {
+                font-size: 14px;
+            }
+
+            @include media-breakpoint-up(md) {
+                font-size: 16px;
+            }
+        }
+
+        .text-information {
+            font-weight: 300;
+            margin: 0;
+            color: $black;
+            font-size: 13px;
+
+            @include media-breakpoint-up(md) {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 0;
+}
+
+.footer-top {
+    background-color: rgba(234, 107, 96, 0.1);
+    padding-top: 40px;
+
+    @include media-breakpoint-up(md) {
+        background: $white;
+        padding-top: 95px;
+    }
+}
