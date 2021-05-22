@@ -4,22 +4,14 @@ import 'react-calendar/dist/Calendar.css';
 
 export default function Sidebar() {
     const [value, onChange] = useState(new Date());
-    const [isTop, setScroll] = useState(true);
-    const [mobileToggle, handleMobileToggle] = useState(false);
-
-    useEffect(() => {
-        window.addEventListener('scroll', () => {
-            setScroll(window.scrollY < 175)
-        })
-    })
 
     return (
-        <div className={`container ${isTop ? '' : 'fixed top-32'}`}>
+        <div className="container flex justify-center">
             <Calendar
                 onChange={onChange}
                 value={value}
                 locale="uk"
-                />
+            />
         </div>
     )
 }

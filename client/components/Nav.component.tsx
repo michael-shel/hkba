@@ -32,13 +32,19 @@ export default function Nav() {
                     id="nav-content">
                     <ul className="list-reset lg:flex flex-1 items-center">
                         <li className="mr-3">
-                            <ActiveLink href="/">Home</ActiveLink>
+                            <ActiveLink href="/">Головна</ActiveLink>
                         </li>
                         <li className="mr-3">
-                            <ActiveLink href="/blog">Blog</ActiveLink>
+                            <ActiveLink href="/blog">Події</ActiveLink>
                         </li>
                         <li className="mr-3">
-                            <ActiveLink href="/portfolio">Portfolio</ActiveLink>
+                            <ActiveLink href="/contacts">Контакти</ActiveLink>
+                        </li>
+                        <li className="mr-3">
+                            <ActiveLink href="/additions">Абітурієнтам</ActiveLink>
+                        </li>
+                        <li className="mr-3">
+                            <ActiveLink href="/about">Про нас</ActiveLink>
                         </li>
                     </ul>
                 </div>

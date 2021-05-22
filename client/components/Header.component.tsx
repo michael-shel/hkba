@@ -30,7 +30,7 @@ export default function Header() {
                 </Link>
             </div>
         </div>
-        <div className="border-yellow-700 border">
+        <div className="border-primary border-1">
             <p className="container mx-auto uppercase fs text-lg text-center">ужгородська греко-католицька богословська академія ім. блаженного теодара ромжі</p>
         </div>
         </div>

@@ -2,24 +2,24 @@
   "routes": [
     {
       "method": "GET",
-      "path": "/business",
-      "handler": "business.find",
+      "path": "/additions",
+      "handler": "additions.find",
       "config": {
         "policies": []
       }
     },
     {
       "method": "PUT",
-      "path": "/business",
-      "handler": "business.update",
+      "path": "/additions",
+      "handler": "additions.update",
       "config": {
         "policies": []
       }
     },
     {
       "method": "DELETE",
-      "path": "/business",
-      "handler": "business.delete",
+      "path": "/additions",
+      "handler": "additions.delete",
       "config": {
         "policies": []
       }

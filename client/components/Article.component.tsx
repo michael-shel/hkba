@@ -7,13 +7,14 @@ const Article = ({ article }) => {
         singleArticle = article[category + 'Articles'][0],
         date = new Date(singleArticle.published_at).toLocaleDateString();
 
+    const content = singleArticle.ArticleBase.content.replace(/\/uploads/g, "http://localhost:1337/uploads");
     return (
         <section className="container max-w-full w-full mb-10">
             <Head>
                 <title>Fer B | {singleArticle.title}</title>
             </Head>
 
-            <div className="flex w-screen justify-between relative h-3/4 md:h-75">
+            <div className="flex justify-between relative h-3/4 md:h-75">
                 <div className="bg-blue-600 z-1 items-center justify-center flex w-full md:w-8/12 p10">
                     <h1 className='text-white my-20 md:w-1/2 text-4xl md:text-8xl font-bold'>{singleArticle.title}</h1>
                 </div>
@@ -29,7 +30,7 @@ const Article = ({ article }) => {
                     </Link>
                     <p>{date}</p>
                 </div>
-                <ReactMarkdown children={singleArticle.ArticleBase.content} />
+                <ReactMarkdown children={content} />
             </div>
         </section>
     )

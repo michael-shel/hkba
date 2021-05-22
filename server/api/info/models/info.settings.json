@@ -1,8 +1,8 @@
 {
   "kind": "singleType",
-  "collectionName": "businesses",
+  "collectionName": "infos",
   "info": {
-    "name": "Business"
+    "name": "Info"
   },
   "options": {
     "increments": true,
@@ -11,13 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
-    },
     "address": {
       "type": "string"
     },
     "phone": {
+      "type": "string"
+    },
+    "email": {
       "type": "string"
     }
   }

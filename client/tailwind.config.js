@@ -13,6 +13,19 @@ module.exports = {
         '3': 3,
       }
     },
+    colors: {
+      transparent: 'transparent',
+      primary: {
+        light: '#e4d69b',
+        DEFAULT: '#9b8e57',
+        dark: '#5c563c',
+      },
+      pink: {
+        light: '#ff7ce5',
+        DEFAULT: '#ff49db',
+        dark: '#ff16d1',
+      },
+    }
   },
   variants: {
     extend: {},
