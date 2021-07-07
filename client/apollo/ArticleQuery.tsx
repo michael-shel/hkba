@@ -1,22 +1,25 @@
 import gql from 'graphql-tag';
 
-const ARTICLE_QUERY = (category: string) => {
+const ARTICLE_QUERY = (cat: string) => {
   return gql`
     query ARTICLE_QUERY {
-        ${category}Articles {
+      blogArticles(where: {category: "${cat}"}) {
           title,
           slug,
+    			category
           published_at,
            ArticleBase {
              content,
              link,
              images {
-               url
+               url,
+               alternativeText,
+               caption
              }
            }
-        }
       }
-    `
+    }
+  `
 }
 
 export default ARTICLE_QUERY;

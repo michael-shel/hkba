@@ -7,7 +7,9 @@ const MEDIA_QUERY = () => {
           title,
           slug,
             image {
-                url
+                url,
+                alternativeText,
+                caption
             }
         }
       }

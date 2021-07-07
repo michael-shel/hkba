@@ -1,6 +1,6 @@
 import Query from '../components/Query.component';
 import ARTICLE_QUERY from '../apollo/ArticleQuery';
-import Card from '../components/Card.component'
+import Card from '../components/SliderCard.component'
 import { PortfolioSvg } from '../SVGS/SVGS';
 
 const Portfolio = () => {

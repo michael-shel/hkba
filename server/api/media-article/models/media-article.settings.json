@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_articles",
+  "info": {
+    "name": "Media Article"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "ArticleBase": {
+      "type": "component",
+      "repeatable": false,
+      "component": "article-base.article-base"
+    }
+  }
+}

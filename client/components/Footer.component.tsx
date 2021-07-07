@@ -15,84 +15,104 @@ const INFO = gql`
 export default function Footer() {
 
     const { error, loading, data } = useQuery(INFO);
-    if (loading) return 'Loading...';
-    if (error) return `Error! ${error.message}`;
+    if (loading) return <h1> Loading... </h1>;
+    if (error) return <h1> `Error! ${error.message}` </h1>
     const { email, phone, address } = data.info;
     // const phone = info.phone;
     // const address = info.address;
     return (
-        <footer className="bg-white">
-            <div className="container mx-auto px-8">
-                <div className="w-full flex flex-col md:flex-row py-6 align-items-center">
-                    <div className="flex-1 col-12 col-md-6 col-lg-3 p-0">
-                        <p className="uppercase font-bold text-black-500 md:mb-6 my-3">Контакти</p>
-                        <div className="row flex-column">
-                            <div className="col">
-                                Телефон : <a href={`tel:${phone}`} className="no-underline hover:underline text-gray-800 hover:text-yellow-500">{phone}</a>
+        <footer className="neumorphism-footer m-3 mb-3">
+            <div className="neumorphism-static-inset justify-content-around">
+                <div className="row align-items-center footer-content-block p-4 w-100">
+                    <div className="neumorphism-static mb-4 mb-lg-0 pt-3 col-12 col-lg-3">
+                        <h3 className="uppercase danger-shadow">Контакти</h3>
+                        <div className="row flex-column text-nowrap">
+                            <div className="col pt-3 d-flex flex-wrap justify-content-between align-items-center">
+                                <div className="neumorphism-inset justify-content-between d-flex py-2 px-3 col-12 col-sm-5 align-items-center">
+                                    <span className="regular-shadow">Телефон</span>
+                                    <div className=""><i className="icon-footer i-phone"></i></div>
+                                </div>
+                                <a href={`tel:${phone}`} className="text-center col-12 col-sm-6 neumorphism-dynamic-btn mt-2 mt-sm-0 py-2 px-3 regular-shadow">{phone}</a>
                             </div>
-                            <div className="col">
-                                Email : <a href={`mailto:${email}`} className="no-underline hover:underline text-gray-800 hover:text-yellow-500">{email}</a>
+                            <div className="col pt-3 d-flex flex-wrap justify-content-between align-items-center">
+                                <div className="neumorphism-inset justify-content-between d-flex py-2 px-3 col-12 col-sm-5 align-items-center">
+                                    <span className="regular-shadow">Email</span>
+                                    <div className=""><i className="icon-footer i-mail"></i></div>
+                                </div>
+                                <a href={`mailto:${email}`} className="text-center col-12 col-sm-6 neumorphism-dynamic-btn mt-2 mt-sm-0 py-2 px-3 regular-shadow">{email}</a>
                             </div>
-                            <div className="col">
-                                Адреса : <a className="no-underline hover:underline text-gray-800 hover:text-yellow-500">{address}</a>
+                            <div className="col p-3 d-flex flex-wrap justify-content-between align-items-center">
+                                <div className="neumorphism-inset justify-content-between d-flex py-2 px-3 col-12 col-sm-5 align-items-center">
+                                    <span className="regular-shadow ">Адреса</span>
+                                    <div className=""><i className="icon-footer i-pin"></i></div>
+                                </div>
+                                <span className="text-center neumorphism-inset py-2 px-3 col-12 col-sm-6 regular-shadow mt-2 mt-sm-0">{address}</span>
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 col-12 p-0 col-md-auto">
-                        <p className="uppercase font-bold text-black-500 md:mb-6 my-3">Сторінки</p>
-                        <div className="row">
-                            <div className="col-6">
+
+                    <div className="neumorphism-static mb-4 mb-lg-0 p-3 col-12 col-lg-5">
+                        <h3 className="uppercase danger-shadow">Сторінки</h3>
+                        <div className="row text-nowrap">
+                            <div className="col-6 py-2">
                                 <Link href="/">
-                                    <a className="no-underline hover:underline text-gray-800 hover:text-yellow-500">Головна</a>
+                                    <a className="link-underline">Головна</a>
                                 </Link>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 py-2">
                                 <Link href="/about">
-                                    <a className="no-underline hover:underline text-gray-800 hover:text-yellow-500">Про нас</a>
+                                    <a className="link-underline">Про нас</a>
                                 </Link>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 py-2">
                                 <Link href="/contacts">
-                                    <a className="no-underline hover:underline text-gray-800 hover:text-yellow-500">Контакти</a>
+                                    <a className="link-underline">Контакти</a>
                                 </Link>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 py-2">
                                 <Link href="/additions">
-                                    <a className="no-underline hover:underline text-gray-800 hover:text-yellow-500">Абітурієнтам</a>
+                                    <a className="link-underline">Абітурієнтам</a>
                                 </Link>
                             </div>
-                            <div className="col-6">
+                            <div className="col-6 py-2">
                                 <Link href="/blog">
-                                    <a className="no-underline hover:underline text-gray-800 hover:text-yellow-500">Події</a>
+                                    <a className="link-underline">Події</a>
                                 </Link>
                             </div>
-                            <div className="col-6">
-                                <Link href="/blog">
-                                    <a className="no-underline hover:underline text-gray-800 hover:text-yellow-500">Історія</a>
+                            <div className="col-6 py-2">
+                                <Link href="/history">
+                                    <a className="link-underline">Історія</a>
                                 </Link>
                             </div>
                         </div>
                     </div>
+
                     <div className="flex-1 row flex-column col-12 p-0 col-lg-3">
                         <div className="col text-center p-3">
-                            <MediaAsset slug="logo" classes="h-10 d-inline" />
+                            <MediaAsset slug="logo2" classes="h-8 d-inline" />
                         </div>
-                        <div className="col">
+                        <div className="col p-3">
                             <ul className="footer-bottom-social-list">
-                                <li className="footer-bottom-social-item youtube">
-                                    <a className="footer-bottom-social-link" target="_blank" href="https://www.pinterest/">
-                                        <span className="i-youtube"></span>
-                                    </a>
+                                <li className="footer-bottom-social-item youtube neumorphism-dynamic">
+                                    <Link href="https://www.pinterest/">
+                                        <a className="footer-bottom-social-link" target="_blank">
+                                            <span className="i-youtube"></span>
+                                        </a>
+                                    </Link>
                                 </li>
-                                <li className="footer-bottom-social-item facebook">
-                                    <a className="footer-bottom-social-link" target="_blank" href="https://www.facebook.com/">
-                                        <span className="i-facebook"></span>
-                                    </a>
+                                <li className="footer-bottom-social-item facebook neumorphism-dynamic">
+                                    <Link href="https://www.facebook.com/">
+                                        <a className="footer-bottom-social-link" target="_blank">
+                                            <span className="i-facebook"></span>
+                                        </a>
+                                    </Link>
                                 </li>
-                                <li className="footer-bottom-social-item instagram">
-                                    <a className="footer-bottom-social-link" target="_blank" href="https://www.instagram.com/">
-                                        <span className="i-instagram"></span>
-                                    </a>
+                                <li className="footer-bottom-social-item instagram neumorphism-dynamic">
+                                    <Link href="https://www.instagram.com/">
+                                        <a className="footer-bottom-social-link" target="_blank">
+                                            <span className="i-instagram"></span>
+                                        </a>
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

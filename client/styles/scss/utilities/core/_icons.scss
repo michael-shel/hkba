@@ -468,6 +468,11 @@ $icon-path-order-status-return: (
         background-image: url(svg-icon-get($icon-path-youtube, $white));
     }
 }
+%icon-youtube--red {
+    &::before {
+        background-image: url(svg-icon-get($icon-path-youtube, $social-youtube));
+    }
+}
 
 %icon-facebook {
     &::before {
@@ -481,6 +486,12 @@ $icon-path-order-status-return: (
     }
 }
 
+%icon-facebook--blue {
+    &::before {
+        background-image: url(svg-icon-get($icon-path-facebook, $social-facebook));
+    }
+}
+
 %icon-instagram {
     &::before {
         background-image: url(svg-icon-get($icon-path-instagram));
@@ -490,6 +501,12 @@ $icon-path-order-status-return: (
 %icon-instagram--white {
     &::before {
         background-image: url(svg-icon-get($icon-path-instagram, $white));
+    }
+}
+
+%icon-instagram--color {
+    &::before {
+        background-image: url(svg-icon-get($icon-path-instagram, $social-instagram));
     }
 }
 

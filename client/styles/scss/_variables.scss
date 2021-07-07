@@ -16,6 +16,7 @@ $grey6: #999;
 $grey7: #7f7f7f;
 $grey8: #979797;
 
+$grey: #EBECF0;
 $white: #fff;
 $black: #222;
 $pink: #ea6b60;
@@ -31,10 +32,19 @@ $social-instagram: radial-gradient(circle at 30% 130%, #fdf497 0%, #fdf497 5%, #
 $blue: #0070d2 !default;
 $green: #008827 !default;
 $primary: #00a1e0 !default;
-$red: #c00 !default;
+$red: #AE1100 !default;
 $success: $green !default;
 $danger: $red !default;
 $light-blue: #7ed0ee !default;
+
+$ruler: 16px;
+$color-red: #AE1100;
+$color-bg: #f2f3f7;
+$color-shadow: #BABECC;
+$color-white: #FFF;
+$color-bg-light: #fbfdff;
+$color-bg-dark: #fafbff;
+
 
 $grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
 $grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
@@ -76,7 +86,7 @@ $alert-success-text: #fff !default;
 $base16-14px: 0.875em !default;
 
 // Bootstrap overrides
-$body-bg: $white;
+$body-bg: $color-bg;
 $card-cap-bg: $white !default;
 
 // Tabs

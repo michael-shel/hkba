@@ -235,15 +235,13 @@
     padding: 0;
     max-width: 200px;
     width: 100%;
+}
 
-    @include media-breakpoint-up(md) {
-        max-width: 150px;
-        margin: 0 0 0 auto;
-    }
+.footer-content-block {
+    justify-content: center;
 
     @include media-breakpoint-up(lg) {
-        max-width: 200px;
-        margin: 0 auto;
+        justify-content: space-between;
     }
 }
 
@@ -277,7 +275,6 @@
 .i-instagram {
     height: 30px;
     width: 30px;
-
     @include media-breakpoint-up(md) {
         height: 20px;
         width: 20px;
@@ -295,33 +292,34 @@
 
 .youtube {
     &:hover {
-        background: $social-youtube;
+        // background: $social-youtube;
 
         .i-youtube {
-            @extend %icon-youtube--white;
+            @extend %icon-youtube--red;
         }
     }
 }
 
 .facebook {
     &:hover {
-        background: $social-facebook;
+        // background: $social-facebook;
 
         .i-facebook {
-            @extend %icon-facebook--white;
+            @extend %icon-facebook--blue;
         }
     }
 }
 
-.instagram {
-    &:hover {
-        background: $social-instagram;
+// .instagram {
+//     border: 5px solid $color-bg;
 
-        .i-instagram {
-            @extend %icon-instagram--white;
-        }
-    }
-}
+//     &:hover {
+//         background: $social-instagram;;
+//         .i-instagram {
+//             @extend %icon-instagram--white;
+//         }
+//     }
+// }
 
 .footer-bottom-social-link {
     font-size: 22px;

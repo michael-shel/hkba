@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "blog_articles",
   "info": {
-    "name": "Blog Article"
+    "name": "Blog Article",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -23,6 +24,26 @@
       "type": "component",
       "repeatable": false,
       "component": "article-base.article-base"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "blog",
+        "history"
+      ],
+      "default": "blog"
+    },
+    "main_post": {
+      "via": "blog_article",
+      "model": "main-post"
+    },
+    "main_slider": {
+      "via": "blog_articles",
+      "model": "main-slider"
+    },
+    "side_slider": {
+      "via": "blog_articles",
+      "model": "side-slider"
     }
   }
 }

@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_posts",
+  "info": {
+    "name": "Main Post",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blog_article": {
+      "via": "main_post",
+      "model": "blog-article"
+    }
+  }
+}
