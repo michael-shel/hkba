@@ -27,9 +27,9 @@ export default function NavMain() {
       <Navbar className="hkba-nav flex-wrap nav-main" bg="light" expand="xl">
         <Navbar.Brand href="#home">
           <Link href="/">
-            <a className="navbar-brand">
+            <span className="navbar-brand">
               <MediaAsset slug="logo2" classes="h-8"></MediaAsset>
-            </a>
+            </span>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

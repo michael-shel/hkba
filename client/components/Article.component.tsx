@@ -39,7 +39,6 @@ function SampleNextArrow(props) {
   }
 
 const Article = ({ article }) => {
-  console.log(article);
     const category = article.category,
         singleArticle = article.blogArticles[0],
         date = new Date(singleArticle.published_at).toLocaleDateString();

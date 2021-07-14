@@ -47,7 +47,6 @@ const MediaGallery = ({ media }) => {
     const [imgHeader, SetImgHeader] = useState('');
     const handleClose = () => setShow(false);
     const handleShow = () => { setShow(true) }
-console.log(media);
     function showModal(image) {
         setShow(true)
         SetImgSrc(`http://localhost:1337${image.url}`);

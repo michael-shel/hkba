@@ -4,12 +4,12 @@ import SINGLE_QUERY from '../../apollo/SingleQuery'
 import { useRouter } from 'next/router'
 
 const ArticleWrapper = () => {
-    const router = useRouter()
+    const router = useRouter();
     return (
         <Query slug={router.query.slug} query={SINGLE_QUERY(router.query.category)}>
             {({ data }) => {
                 data['category'] = router.query.category;
-                return <Article article={data} />
+                return <Article key={data.slug}  article={data} />
             }}
         </Query>
     )

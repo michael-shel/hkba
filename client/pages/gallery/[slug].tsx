@@ -11,7 +11,7 @@ const MediaWrapper = () => {
             {({ data }) => {
                 console.log(data)
                 data['category'] = router.query.category;
-                return <MediaGallery media={data.mediaArticles[0]} />
+                return <MediaGallery key={data.mediaArticles[0].slug} media={data.mediaArticles[0]} />
             }}
         </Query>
 
