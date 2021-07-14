@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "history_articles",
+  "info": {
+    "name": "History Article",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "ArticleBase": {
+      "type": "component",
+      "repeatable": false,
+      "component": "article-base.article-base"
+    },
+    "mainPost": {
+      "type": "boolean",
+      "unique": true
+    },
+    "mainSlider": {
+      "type": "boolean"
+    },
+    "sideSlider": {
+      "type": "boolean"
+    }
+  }
+}

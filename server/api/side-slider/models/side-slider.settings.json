@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "side_sliders",
+  "info": {
+    "name": "Side Slider"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blog_articles": {
+      "via": "side_slider",
+      "collection": "blog-article"
+    }
+  }
+}

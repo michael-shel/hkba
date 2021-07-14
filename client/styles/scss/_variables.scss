@@ -1,0 +1,136 @@
+@import "bootstrap/scss/functions";
+
+// font-awesome font file locations in relation to target location of the css file.
+$fa-font-path: "../fonts" !default;
+
+// flag icons location in relation to target location of the css file.
+$flag-icon-css-path: "../fonts/flags/" !default;
+
+// Consolidated values
+$grey1: #f2f3f5;
+$grey2: #f7f7f7;
+$grey3: #d5d7de;
+$grey4: #d8d8d8;
+$grey5: #ccc;
+$grey6: #999;
+$grey7: #7f7f7f;
+$grey8: #979797;
+
+$grey: #EBECF0;
+$white: #fff;
+$black: #222;
+$pink: #ea6b60;
+$light-pink: #f9d2cf;
+$slightly-pink: #fbe1df;
+$white-smock: $grey2;
+$light-silver: $grey4;
+
+$social-youtube: #c8232c;
+$social-facebook: #3b5998;
+$social-instagram: radial-gradient(circle at 30% 130%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+
+$blue: #0070d2 !default;
+$green: #008827 !default;
+$primary: #00a1e0 !default;
+$red: #AE1100 !default;
+$success: $green !default;
+$danger: $red !default;
+$light-blue: #7ed0ee !default;
+
+$ruler: 16px;
+$color-red: #AE1100;
+$color-bg: #f2f3f7;
+$color-shadow: #BABECC;
+$color-white: #FFF;
+$color-bg-light: #fbfdff;
+$color-bg-dark: #fafbff;
+
+
+$grey-transparent-1: rgba(0, 0, 0, 0.65) !default;
+$grey-transparent-2: rgba(0, 0, 0, 0.25) !default;
+$grey-transparent-3: rgba(0, 0, 0, 0.1) !default;
+$pink-transparent-1: rgba(234, 107, 96, 0.15) !default;
+
+$body-color: $black;
+$light-gray: $grey1 !default;
+$slightly-darker-gray: $grey4 !default;
+$dark-gray: $grey6 !default;
+$darker-gray: $grey7 !default;
+$horizontal-rule-grey: $grey3 !default;
+$product-number-grey: $grey3 !default;
+$horizontal-border-grey: $grey4 !default;
+$link-color: $black;
+$hr-border-color: $grey3 !default;
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 912px,
+    lg: 1301px
+);
+
+$container-max-widths: (
+    sm: 540px,
+    md: 912px,
+    lg: 1290px
+);
+
+$border-radius: 0;
+$border-radius-lg: 0;
+$border-radius-sm: 0;
+
+$state-danger-text: #fff !default;
+$alert-success-text: #fff !default;
+
+// Font sizes
+$base16-14px: 0.875em !default;
+
+// Bootstrap overrides
+$body-bg: $color-bg;
+$card-cap-bg: $white !default;
+
+// Tabs
+$nav-tabs-border-width: 0 !default;
+$nav-tabs-border-radius: 0 !default;
+$nav-tabs-active-link-hover-bg: transparent !default;
+
+// breadcrumb
+$breadcrumb-padding-x: 0;
+$breadcrumb-padding-y: 0;
+$breadcrumb-margin-bottom: 20px;
+$breadcrumb-item-padding: 5px;
+$breadcrumb-bg: transparent;
+$breadcrumb-divider-color: $grey3;
+
+// table border
+$table-border-color: $grey3 !default;
+
+// modal
+$modal-dialog-margin-y-sm-up: 255px;
+$modal-backdrop-bg: #000;
+$modal-backdrop-opacity: 0.7;
+
+$svg-check: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='%23ff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E") !default;
+
+$border-width: 0;
+$input-height: 50px;
+$input-bg: $grey2;
+$input-box-shadow: 0;
+$input-btn-font-size: 18px;
+$input-btn-padding-x: 0.938rem;
+$input-btn-focus-box-shadow: none;
+
+$input-placeholder-color: #c5c5c5;
+$input-color: $black;
+
+$font-family-barlow:         "Barlow", sans-serif;
+$font-family-satisfy:        "Satisfy", cursive;
+$font-family-sans-pro:       "Source Sans Pro", sans-serif;
+
+$font-family-base:            $font-family-barlow;
+
+$font-weight-light:           300;
+
+$font-weight-base:            $font-weight-light;
+
+$space: 8rem;

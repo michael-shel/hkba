@@ -1,0 +1,139 @@
+@import "../variables";
+
+.price {
+    color: $black;
+    display: inline-block;
+
+    .strike-through {
+        color: $grey8;
+        font-size: 14px;
+        margin-right: 3px;
+        text-decoration: line-through;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 18px;
+        }
+
+        &--minicart {
+            font-size: 14px;
+        }
+    }
+
+    .sales-label {
+        @include when-inside('.cart-page') {
+            display: inline-block;
+        }
+
+        color: $grey8;
+        font-size: 10px;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 12px;
+        }
+    }
+
+    .range,
+    .starting {
+        @include media-breakpoint-up(sm) {
+            display: flex;
+            flex-direction: column;
+
+            > span {
+                flex-grow: 1;
+                max-width: 100%;
+            }
+        }
+
+        .prices-title {
+            font-size: 14px;
+            font-weight: 300;
+            white-space: nowrap;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 18px;
+            }
+
+            @include when-inside('.product-prices-top') {
+                font-size: 14px;
+            }
+        }
+
+        @include when-inside('.product-prices-top') {
+            display: block;
+        }
+    }
+
+    .starting,
+    .range,
+    .sales {
+        font-weight: 600;
+
+        &--minicart {
+            font-size: 14px;
+        }
+    }
+
+    .tiered {
+        color: $grey7;
+
+        table {
+            border-top: 1px solid $grey3;
+            margin: 0 auto;
+
+            tr {
+                &:nth-child(odd) {
+                    background-color: $grey2;
+                }
+            }
+        }
+
+        td,
+        span.price {
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+
+        td {
+            padding: 0.313rem;
+
+            &.quantity {
+                font-weight: normal;
+                text-align: right;
+            }
+
+            &.value {
+                text-align: left;
+            }
+        }
+
+        .table-header {
+            font-size: 1.125rem;
+            padding: 0.313rem;
+        }
+
+        .column-header {
+            font-size: 1rem;
+            padding: 0.313rem;
+            font-weight: normal;
+        }
+
+        .column-header.quantity {
+            text-align: right;
+        }
+    }
+}
+
+.minicart {
+    .price,
+    .sales {
+        font-size: 14px;
+
+        .strike-through {
+            font-size: 14px;
+        }
+    }
+
+    .line-item-total-price {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/ch-calendars",
+      "handler": "ch-calendar.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ch-calendars/count",
+      "handler": "ch-calendar.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/ch-calendars/:id",
+      "handler": "ch-calendar.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/ch-calendars",
+      "handler": "ch-calendar.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/ch-calendars/:id",
+      "handler": "ch-calendar.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/ch-calendars/:id",
+      "handler": "ch-calendar.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+.custom-checkbox-radio,
+#paymentMethodsList,
+.paymentMethod {
+    .checkbox-radio-container {
+        position: relative;
+        align-self: start;
+
+        .form-check-input {
+            display: none;
+        }
+
+        .form-check-input:checked + label {
+            &::before {
+                content: '';
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background-color: $pink;
+                top: 50%;
+                left: 50%;
+                right: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &::after {
+                border: 1px solid $pink;
+            }
+        }
+
+        .form-check-input + label {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 1px solid $grey5;
+                top: 0;
+            }
+        }
+
+        @include when-inside('.contact-us') {
+            .form-check-input:checked + label {
+                &::before {
+                    top: 100%;
+                }
+            }
+
+            .form-check-input + label {
+                &::after {
+                    top: 50%;
+                }
+            }
+
+            span {
+                cursor: pointer;
+            }
+        }
+
+        @include when-inside('.shipping-form') {
+            .form-check-input:checked + label {
+                &::before {
+                    top: 3px;
+                    left: 3px;
+                    transform: none;
+                    right: inherit;
+                }
+            }
+
+            .form-check-input + label {
+                &::after {
+                    top: 0;
+                }
+            }
+
+            span {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .checkbox-radio-payment {
+        position: relative;
+
+        input {
+            display: none;
+        }
+
+        input:checked ~ label {
+            &::before {
+                content: '';
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+                background-color: $pink;
+                top: 21px;
+                right: 21px;
+            }
+
+            &::after {
+                border: 1px solid $pink;
+            }
+        }
+
+        input ~ label {
+            &::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 1px solid $grey5;
+                top: 18px;
+                right: 18px;
+            }
+        }
+    }
+}

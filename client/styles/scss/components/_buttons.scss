@@ -1,0 +1,103 @@
+.btn {
+    $selector: &;
+
+    border: 2px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18px;
+    min-height: 50px;
+    padding: 14px 10px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s all ease;
+    user-select: none;
+
+    @include media-breakpoint-up(md) {
+        font-size: 14px;
+        min-height: 35px;
+        padding: 6px 10px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        font-size: 16px;
+        min-height: 50px;
+        padding: 14px 10px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        outline: none;
+        text-decoration: none;
+    }
+
+    &#{$selector}-primary,
+    &#{$selector}-pink {
+        background: $pink;
+        border-color: $pink;
+        color: $white;
+
+        &:hover,
+        &:active {
+            background: $white;
+            color: $pink;
+        }
+
+        &.disabled,
+        &[disabled='disabled'],
+        &[disabled] {
+            border-color: $light-silver;
+            background: $light-silver;
+            cursor: not-allowed;
+            color: $white;
+        }
+    }
+
+    &#{$selector}-primary-verse {
+        background: $white;
+        border-color: $pink;
+        color: $pink;
+
+        &:hover,
+        &:active {
+            background: $pink;
+            color: $white;
+        }
+
+        &.disabled,
+        &[disabled='disabled'],
+        &[disabled] {
+            border-color: $light-silver;
+            background: $light-silver;
+            cursor: not-allowed;
+            color: $white;
+        }
+    }
+
+    &#{$selector}-secondary,
+    &#{$selector}-outline-pink {
+        background: $white;
+        border-color: $pink;
+        color: $pink;
+
+        &:hover,
+        &:active {
+            background: $pink;
+            color: $white;
+        }
+
+        &.disabled,
+        &[disabled='disabled'],
+        &[disabled] {
+            border-color: $light-silver;
+            background: transparent;
+            cursor: not-allowed;
+            color: $light-silver;
+        }
+    }
+
+    &#{$selector}--full-width {
+        width: 100%;
+    }
+}

@@ -1,0 +1,126 @@
+// @import "variables";
+// @import "bootstrap/scss/variables";
+// @import "bootstrap/scss/mixins/breakpoints";
+
+.content-page {
+    overflow: hidden;
+
+    h4 {
+        padding: 10px 0 0;
+        color: $pink;
+    }
+
+    .row {
+        @include media-breakpoint-down(md) {
+            overflow: auto;
+        }
+
+        .col {
+            overflow: auto;
+        }
+    }
+}
+
+.content-banner {
+    position: relative;
+    width: 100vw;
+    margin: 0 calc(-50vw + 50%);
+
+    .content-banner-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .content-banner-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 150px;
+        position: relative;
+        z-index: 1;
+
+        @include media-breakpoint-up(md) {
+            min-height: 270px;
+        }
+
+        @include media-breakpoint-up(md) {
+            min-height: 350px;
+        }
+    }
+
+    .content-banner-text {
+        color: $white;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        text-transform: uppercase;
+
+        @include media-breakpoint-up(md) {
+            font-size: 35px;
+        }
+    }
+}
+
+.block-text {
+    padding: 50px 0 0;
+}
+
+.block-title-left {
+    margin: 0 0 30px;
+    padding: 50px 0 0;
+    position: relative;
+
+    &::before {
+        background-color: $slightly-pink;
+        content: '';
+        display: block;
+        height: 200px;
+        left: -100px;
+        position: absolute;
+        top: 40px;
+        transform: rotate(45deg);
+        width: 200px;
+    }
+
+    h4 {
+        padding: 10px 0;
+    }
+}
+
+.block-title-right {
+    margin: 0 0 30px;
+    padding: 50px 0 0;
+    position: relative;
+
+    &::before {
+        background-color: $slightly-pink;
+        content: '';
+        display: block;
+        height: 200px;
+        right: -100px;
+        position: absolute;
+        top: 40px;
+        transform: rotate(45deg);
+        width: 200px;
+    }
+
+    h4 {
+        padding: 10px 0;
+    }
+}
+
+.block-image-text {
+    padding: 50px 0 30px;
+}
+
+body {
+    [id^=trustbadge-container] {
+        transform: translate(0);
+        position: static !important;
+    }
+}

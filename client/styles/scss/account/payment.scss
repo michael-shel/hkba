@@ -1,0 +1,12 @@
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "account";
+@import "../components/creditCardField";
+
+@include account-nav();
+@include account-card();
+
+.payment-to-remove {
+    font-weight: bold;
+}

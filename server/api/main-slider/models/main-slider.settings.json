@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "main_sliders",
+  "info": {
+    "name": "Main Slider"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "blog_articles": {
+      "via": "main_slider",
+      "collection": "blog-article"
+    }
+  }
+}

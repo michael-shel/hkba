@@ -1,14 +1,16 @@
 import { useRouter } from 'next/router'
 import { resourceLimits } from 'worker_threads';
 
-const ActiveLink = ({ children, href }) => {
+const ActiveLink = ({ children, href, icon }) => {
 
     const router = useRouter();
-    let cls;
+    let cls,ils;
     if (`/${router.query.category}` === href || router.asPath === href) {
-        cls = 'font-bold'
+        cls = 'active-link';
+        ils = 'neumorphism-static-btn'
     } else {
-        cls = 'hover:text-gray-800 hover:text-underline'
+        cls = '';
+        ils = 'neumorphism-static-inset'
     }
 
     const handleClick = e => {
@@ -16,7 +18,7 @@ const ActiveLink = ({ children, href }) => {
         router.push(href)
     }
 
-    return <a href={href} onClick={handleClick} className={`inline-block py-2 px-4 no-underline ${cls}`}>{children}</a>
+    return <div className={`${cls} text-hover neumorphism-dynamic-btn`}><a href={href} onClick={handleClick} className={`link px-3 py-2 d-flex align-items-center justify-content-center `}><div className={`p-1 mr-2`}><i className={`nav-icon  ${icon}`}></i></div> {children}</a></div>
 }
 
 export default ActiveLink;

@@ -1,0 +1,64 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "components/formFields";
+@import "components/toastMessage";
+@import "components/helpCard";
+
+.contact-us-signup-message {
+    @include toast-message();
+}
+
+.contact-us-signup-alert {
+    @include toast-alert();
+}
+
+.contact-us {
+    .section-title {
+        font-size: 18px;
+        font-weight: 600;
+
+        @include media-breakpoint-up(md) {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .contact-us-topic-b2b {
+        &-select {
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            color: $black;
+            background-color: $white;
+        }
+    }
+
+    .contact-select-block {
+        position: relative;
+
+        .contact-select {
+            background: none;
+            position: relative;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+            z-index: 2;
+        }
+
+        .contact-select-arrow {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
+        .contact-select-background {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            bottom: 0;
+            background: $grey2;
+            z-index: 0;
+        }
+    }
+}

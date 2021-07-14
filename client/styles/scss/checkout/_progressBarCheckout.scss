@@ -1,0 +1,260 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.tracking-progress-container {
+    margin-bottom: 50px;
+
+    p {
+        line-height: 33px;
+        font-size: 20px;
+    }
+
+    .checkout-step {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 33px;
+        color: #c5c5c5;
+
+        @include media-breakpoint-down(sm) {
+            display: block;
+        }
+    }
+}
+
+.progress-tracking {
+    position: relative;
+
+    .progress-bar-el-empty {
+        background: $grey1;
+        width: 100%;
+        height: 5px;
+    }
+
+    .progress-bar-el-full {
+        height: 5px;
+        background: $pink;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+.current-pr-basket {
+    .progress-basket {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 50%;
+        }
+    }
+
+    .progress-login,
+    .progress-delivery {
+        text-align: center;
+    }
+
+    .progress-payment {
+        text-align: right;
+    }
+
+    @include media-breakpoint-down(sm) {
+        .progress-login,
+        .progress-delivery,
+        .progress-payment {
+            display: none;
+        }
+
+        .progress-basket .progress-bar-el-full {
+            width: 6%;
+        }
+    }
+}
+
+.current-pr-login {
+    .progress-basket {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 100%;
+        }
+    }
+
+    .progress-login,
+    .progress-delivery {
+        text-align: center;
+    }
+
+    .progress-payment {
+        text-align: right;
+    }
+
+    .progress-login {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 50%;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .progress-basket,
+        .progress-delivery,
+        .progress-payment {
+            display: none;
+        }
+
+        .progress-login {
+            text-align: left;
+        }
+    }
+}
+
+.current-pr-delivery {
+    .progress-basket {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 100%;
+        }
+    }
+
+    .progress-login,
+    .progress-delivery {
+        text-align: center;
+    }
+
+    .progress-payment {
+        text-align: right;
+    }
+
+    .progress-login {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 100%;
+        }
+    }
+
+    .progress-delivery {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 50%;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .progress-basket,
+        .progress-login,
+        .progress-payment {
+            display: none;
+        }
+
+        .progress-delivery {
+            text-align: left;
+        }
+
+        .progress-delivery .progress-bar-el-full {
+            width: 70%;
+        }
+    }
+}
+
+.current-pr-payment {
+    .progress-basket {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 100%;
+        }
+    }
+
+    .progress-login,
+    .progress-delivery {
+        text-align: center;
+    }
+
+    .progress-payment {
+        text-align: right;
+    }
+
+    .progress-login {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 100%;
+        }
+    }
+
+    .progress-delivery {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 100%;
+        }
+    }
+
+    .progress-payment {
+        p {
+            font-size: 22px;
+            font-weight: 500;
+            color: $pink;
+        }
+
+        .progress-bar-el-full {
+            width: 100%;
+        }
+    }
+    @include media-breakpoint-down(sm) {
+        .progress-basket,
+        .progress-delivery,
+        .progress-login {
+            display: none;
+        }
+
+        .progress-payment {
+            text-align: left;
+        }
+
+        .progress-basket .progress-bar-el-full {
+            width: 100%;
+        }
+    }
+}

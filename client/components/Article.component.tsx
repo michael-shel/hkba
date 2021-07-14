@@ -1,35 +1,92 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
+import Slider from "react-slick";
+
+function SampleNextArrow(props) {
+    const { className, onClick } = props;
+    return (
+      <div>
+        <div
+          className={`icon sample-next-arrow-req ${className}`}
+          onClick={onClick}
+        >
+          <i className="icon i-arrow-down--dark-grey"></i>
+          <div className="dots">
+            <div className="dot-req"></div>
+          </div>
+        </div>
+      </div>
+
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, onClick } = props;
+    return (
+      <div>
+        <div
+          className={`icon sample-prev-arrow-req ${className}`}
+          onClick={onClick}
+        >
+          <i className="icon i-arrow-down--dark-grey"></i>
+          <div className="dots">
+            <div className="dot-req"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
 const Article = ({ article }) => {
     const category = article.category,
-        singleArticle = article[category + 'Articles'][0],
+        singleArticle = article.blogArticles[0],
         date = new Date(singleArticle.published_at).toLocaleDateString();
 
-    return (
-        <section className="container max-w-full w-full mb-10">
-            <Head>
-                <title>Fer B | {singleArticle.title}</title>
-            </Head>
+    const content = singleArticle.ArticleBase.content.replace(/\/uploads/g, "http://localhost:1337/uploads");
+    var settings = {
+        dots: true,
+        arrows: true,
+        infinite: true,
+        autoplay: true,
+        autoplaySpeed: 8888,
+        speed: 888,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />
+      };
 
-            <div className="flex w-screen justify-between relative h-3/4 md:h-75">
-                <div className="bg-blue-600 z-1 items-center justify-center flex w-full md:w-8/12 p10">
-                    <h1 className='text-white my-20 md:w-1/2 text-4xl md:text-8xl font-bold'>{singleArticle.title}</h1>
-                </div>
-                <img src={`http://localhost:1337${singleArticle.ArticleBase.images[0].url}`} alt={singleArticle.title} className='hidden md:flex aboslute right-0' />
+    return (
+        <section className="container p-4 mt-5">
+
+            <div className="neumorphism-static px-3 py-2 mb-5">
+                <h1 className='regular-shadow'>{singleArticle.title}</h1>
             </div>
 
-            <div className="mt-20 px-10 lg:px-0 container mx-auto leading-loose">
-                <div className="text-gray-500 mb-10 flex justify-between">
-                    <Link href={`/${category}`}>
-                        <a className='flex items-center text-2xl capitalize'>
-                            Back to {category}
-                        </a>
-                    </Link>
+            <div className="neumorphism-inset p-2 px-md-4 py-md-3">
+                <div className="blog-slider">
+                    <Slider {...settings}> {
+                    singleArticle.ArticleBase.images.map(img => {
+                        return <img src={`http://localhost:1337${img.url}`} alt={singleArticle.title} className='blog-img' />
+                    })}
+                    </Slider>
+                </div>
+                <div className="">
+                    <ReactMarkdown children={content} />
+                </div>
+
+                <div className="">
                     <p>{date}</p>
                 </div>
-                <ReactMarkdown children={singleArticle.ArticleBase.content} />
+            </div>
+
+            <div className="my-5">
+                <Link href={`/${category}`}>
+                    <a className="regular-shadow neumorphism-dynamic-btn p-3 flex items-center text-2xl capitalize">
+                        Назад
+                    </a>
+                </Link>
             </div>
         </section>
     )

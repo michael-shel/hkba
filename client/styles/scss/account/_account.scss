@@ -1,0 +1,76 @@
+@import "../variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+@import "../components/formFields";
+@import "./components/navigation";
+@import "./components/card";
+
+.account-image {
+    background-image: url(../../images/account.jpg);
+    background-position-y: 40%;
+}
+
+.card-info-group {
+    p {
+        margin-bottom: 0;
+    }
+
+    div {
+        margin-bottom: 1rem;
+    }
+
+    div:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.order-history-control,
+.order-history {
+    h2 {
+        font-weight: bold;
+        margin-top: 0.5rem;
+    }
+}
+
+.dashboard-order-card-image {
+    width: 7rem;
+    padding-right: 1rem;
+}
+
+.dashboard-order-card-footer-columns:last-child {
+    text-align: right;
+}
+
+.dashboard-order-card-footer-value {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.title-wrapper {
+    .title {
+        font-size: 20px;
+        font-weight: 300;
+        color: $black;
+
+        @include media-breakpoint-up(md) {
+            font-size: 22px;
+            font-weight: 600;
+        }
+    }
+
+    .title-separator {
+        border-top: 1px solid $horizontal-rule-grey;
+    }
+}
+
+.subscription-btn {
+    min-width: 100px;
+
+    + .subscription-btn {
+        margin-left: 20px;
+    }
+}
+
+.btn-cancel {
+    margin-top: 15px;
+}

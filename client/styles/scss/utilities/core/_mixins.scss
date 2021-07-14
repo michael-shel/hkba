@@ -1,0 +1,33 @@
+// Make a context based selector a little more friendly
+// @param {String} $context
+@mixin when-inside($context) {
+    #{$context} & {
+        @content;
+    }
+}
+
+// Placeholder Color
+// @param {String} $color - should be a color value
+@mixin placeholder($color: $white) {
+    &::-webkit-input-placeholder {
+        color: $color;
+        @content;
+    }
+
+    &:-moz-placeholder {
+        color: $color;
+        opacity: 1;
+        @content;
+    }
+
+    &::-moz-placeholder {
+        color: $color;
+        opacity: 1;
+        @content;
+    }
+
+    &:-ms-input-placeholder {
+        color: $color;
+        @content;
+    }
+}

@@ -1,0 +1,626 @@
+// Icons
+//
+// .i-pinterest - pinterest
+// .i-facebook - facebook
+// .i-instagram - instagram
+// .i-twitter - twitter
+// .i-view-list - view-list
+// .i-view-grid - view-grid
+// .i-arrow-down - arrow-down
+// .i-arrow-down-acute - arrow-down-acute
+// .i-arrow-left - arrow-left
+// .i-arrow-right - arrow-right
+// .i-arrow-up - arrow-up
+// .i-arrow-right-long - arrow-right-long
+// .i-arrow-right-long-thin - arrow-right-long-thin
+// .i-paypal - paypal
+// .i-credit-cart - credit-cart
+// .i-credit-cart-bold - credit-cart-bold
+// .i-eye - eye
+// .i-filter - filter
+// .i-filter--red - filter--red
+// .i-heart - heart
+// .i-heart-white - heart--white
+// .i-heart-full - heart-full
+// .i-basket - basket
+// .i-basket--white - basket--white
+// .i-discount - discount
+// .i-target - target
+// .i-close - close
+// .i-home - home
+// .i-menu - menu
+// .i-menu--white - menu--white
+// .i-modifier - modifier
+// .i-phone - phone
+// .i-pin - pin
+// .i-pin--white - pin--white
+// .i-plus - plus
+// .i-profile - profile
+// .i-profile--white - profile--white
+// .i-search - search
+// .i-search--white - search--white
+// .i-search-thin - search-thin
+// .i-lock - lock
+// .i-bag - bag
+// .i-bag--white - bag--white
+// .i-trash - trash
+// .i-delivery - delivery
+// .i-france - france
+// .i-maze - maze
+// .i-return - return
+// .i-secure - secure
+// .i-service - service
+// .i-water - water
+// .i-cancel - cancel
+// .i-facture - facture
+// .i-order-open - order-open
+// .i-order-return - order-return
+// .i-mail - mail
+// .i-information - information
+// .i-order-status-cancel - order-status-cancel
+// .i-order-status-check - order-status-check
+// .i-order-status-payment - order-status-payment
+// .i-order-status-return - order-status-return
+
+.icon-base {
+    @extend %i-icon;
+}
+
+.i-pinterest {
+    @extend %i-icon;
+    @extend %icon-pinterest;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-pinterest--white;
+    }
+}
+
+.i-youtube {
+    @extend %i-icon;
+    @extend %icon-youtube;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-youtube--white;
+    }
+    &--red {
+        @extend %i-icon;
+        @extend %icon-youtube--red;
+    }
+}
+
+.i-back-to-top {
+    @extend %i-icon;
+    @extend %icon-back-to-top;
+}
+
+.i-facebook {
+    @extend %i-icon;
+    @extend %icon-facebook;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-facebook--white;
+    }
+
+    &--blue {
+        @extend %i-icon;
+        @extend %icon-facebook--blue;
+    }
+}
+
+.i-instagram {
+    @extend %i-icon;
+    @extend %icon-instagram;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-instagram--white;
+    }
+
+    &--color {
+        @extend %i-icon;
+        @extend %icon-instagram--color;
+    }
+}
+
+.i-twitter {
+    @extend %i-icon;
+    @extend %icon-twitter;
+}
+
+.i-view-list {
+    @extend %i-icon;
+    @extend %icon-view-list;
+}
+
+.i-view-grid {
+    @extend %i-icon;
+    @extend %icon-view-grid;
+}
+
+.i-arrow-down-acute {
+    @extend %i-icon;
+    @extend %icon-arrow-down-acute;
+}
+
+.i-arrow-down {
+    @extend %i-icon;
+    @extend %icon-arrow-down;
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-arrow-down--grey;
+    }
+
+    &--dark-grey {
+        @extend %i-icon;
+        @extend %icon-arrow-down--dark-grey;
+    }
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-arrow-down--pink;
+    }
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-arrow-down--white;
+    }
+
+    &--pink--grey {
+        @extend %i-icon;
+        @extend %icon-arrow-down--pink--grey;
+    }
+}
+
+.i-arrow-left {
+    @extend %i-icon;
+    @extend %icon-arrow-left;
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-arrow-left--grey;
+    }
+}
+
+.i-arrow-right {
+    @extend %i-icon;
+    @extend %icon-arrow-right;
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-arrow-right--grey;
+    }
+}
+
+.i-arrow-up {
+    @extend %i-icon;
+    @extend %icon-arrow-up;
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-arrow-up--grey;
+    }
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-arrow-up--pink;
+    }
+
+    &--pink--grey {
+        @extend %i-icon;
+        @extend %icon-arrow-up--pink--grey;
+    }
+}
+
+.i-arrow-right-long {
+    @extend %i-icon;
+    @extend %icon-arrow-right-long;
+}
+
+.i-arrow-right-long-thin {
+    @extend %i-icon;
+    @extend %icon-arrow-right-long-thin;
+}
+
+.i-paypal {
+    @extend %i-icon;
+    @extend %icon-paypal;
+}
+
+.i-credit-cart {
+    @extend %i-icon;
+    @extend %icon-credit-cart;
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-credit-cart--grey;
+    }
+}
+
+.i-credit-cart-bold {
+    @extend %i-icon;
+    @extend %icon-credit-cart-bold;
+}
+
+.i-eye {
+    @extend %i-icon;
+    @extend %icon-eye;
+}
+
+.i-filter {
+    @extend %i-icon;
+    @extend %icon-filter;
+
+    &--red {
+        @extend %i-icon;
+        @extend %icon-filter--red;
+    }
+}
+
+.i-heart {
+    @extend %i-icon;
+    @extend %icon-heart;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-heart--white;
+    }
+}
+
+.i-heart-full {
+    @extend %i-icon;
+    @extend %icon-heart-full;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-heart-full--pink;
+    }
+}
+
+.i-basket {
+    @extend %i-icon;
+    @extend %icon-basket;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-basket--white;
+    }
+}
+
+.i-discount {
+    @extend %i-icon;
+    @extend %icon-discount;
+}
+
+.i-target {
+    @extend %i-icon;
+    @extend %icon-target;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-target--pink;
+    }
+}
+
+.i-close {
+    @extend %i-icon;
+    @extend %icon-close;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-close--white;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-close--grey;
+    }
+}
+
+.i-close-circle {
+    @extend %i-icon;
+    @extend %icon-close-circle;
+}
+
+.i-close-bold {
+    @extend %i-icon;
+    @extend %icon-close-bold;
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-close-bold--grey;
+    }
+}
+
+.i-home {
+    @extend %i-icon;
+    @extend %icon-home;
+}
+
+.i-menu {
+    @extend %i-icon;
+    @extend %icon-menu;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-menu--white;
+    }
+}
+
+.i-modifier {
+    @extend %i-icon;
+    @extend %icon-modifier;
+}
+
+.i-phone {
+    @extend %i-icon;
+    @extend %icon-phone;
+}
+
+.i-pin {
+    @extend %i-icon;
+    @extend %icon-pin;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-pin--white;
+    }
+}
+
+.i-plus {
+    @extend %i-icon;
+    @extend %icon-plus;
+}
+
+.i-profile {
+    @extend %i-icon;
+    @extend %icon-profile;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-profile--white;
+    }
+}
+
+.i-search {
+    @extend %i-icon;
+    @extend %icon-search;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-search--white;
+    }
+}
+
+.i-search-thin {
+    @extend %i-icon;
+    @extend %icon-search-thin;
+}
+
+.i-lock {
+    @extend %i-icon;
+    @extend %icon-lock;
+}
+
+.i-bag {
+    @extend %i-icon;
+    @extend %icon-bag;
+
+    &--white {
+        @extend %i-icon;
+        @extend %icon-bag--white;
+    }
+}
+
+.i-trash {
+    @extend %i-icon;
+    @extend %icon-trash;
+}
+
+.i-delivery {
+    @extend %i-icon;
+    @extend %icon-delivery;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-delivery--pink;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-delivery--grey;
+    }
+}
+
+.i-france {
+    @extend %i-icon;
+    @extend %icon-france;
+}
+
+.i-maze {
+    @extend %i-icon;
+    @extend %icon-maze;
+}
+
+.i-return {
+    @extend %i-icon;
+    @extend %icon-return;
+}
+
+.i-secure {
+    @extend %i-icon;
+    @extend %icon-secure;
+}
+
+.i-service {
+    @extend %i-icon;
+    @extend %icon-service;
+}
+
+.i-water {
+    @extend %i-icon;
+    @extend %icon-water;
+}
+
+.i-cancel {
+    @extend %i-icon;
+    @extend %icon-cancel;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-cancel--pink;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-cancel--grey;
+    }
+}
+
+.i-facture {
+    @extend %i-icon;
+    @extend %icon-facture;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-facture--pink;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-facture--grey;
+    }
+}
+
+.i-order-open {
+    @extend %i-icon;
+    @extend %icon-order-open;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-order-open--pink;
+    }
+}
+
+.i-order-return {
+    @extend %i-icon;
+    @extend %icon-order-return;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-order-return--pink;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-order-return--grey;
+    }
+}
+
+.i-mail {
+    @extend %i-icon;
+    @extend %icon-mail;
+}
+
+.i-information {
+    @extend %i-icon;
+    @extend %icon-information;
+}
+
+.i-clock {
+    @extend %i-icon;
+    @extend %icon-clock;
+}
+
+.i-cube {
+    @extend %i-icon;
+    @extend %icon-cube;
+}
+
+.i-map {
+    @extend %i-icon;
+    @extend %icon-map;
+
+    &--black {
+        @extend %i-icon;
+        @extend %icon-map--black;
+    }
+}
+
+.i-waze {
+    @extend %i-icon;
+    @extend %icon-waze;
+
+    &--black {
+        @extend %i-icon;
+        @extend %icon-waze--black;
+    }
+}
+
+.i-order-status-cancel {
+    @extend %i-icon;
+    @extend %icon-order-status-cancel;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-order-status-cancel--pink;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-order-status-cancel--grey;
+    }
+
+    &--light-pink {
+        @extend %i-icon;
+        @extend %icon-order-status-cancel--light-pink;
+    }
+}
+
+.i-order-status-check {
+    @extend %i-icon;
+    @extend %icon-order-status-check;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-order-status-check--pink;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-order-status-check--grey;
+    }
+}
+
+.i-order-status-payment {
+    @extend %i-icon;
+    @extend %icon-order-status-payment;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-order-status-payment--pink;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-order-status-payment--grey;
+    }
+}
+
+.i-order-status-return {
+    @extend %i-icon;
+    @extend %icon-order-status-return;
+
+    &--pink {
+        @extend %i-icon;
+        @extend %icon-order-status-return--pink;
+    }
+
+    &--grey {
+        @extend %i-icon;
+        @extend %icon-order-status-return--grey;
+    }
+}

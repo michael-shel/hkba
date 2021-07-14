@@ -1,0 +1,129 @@
+@import "variables";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins/breakpoints";
+
+.item-attributes {
+    vertical-align: top;
+    padding-left: 0;
+    overflow: hidden;
+}
+
+.item-attributes-confirmation {
+    .line-item-name {
+        margin-top: 1.8em !important;
+        font-size: 1em !important;
+    }
+}
+
+.line-item-attributes,
+.line-item-option {
+    font-size: 14px;
+    margin: 0;
+
+    &--gray {
+        color: #7f7f7f;
+    }
+}
+
+.line-item-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 1.13;
+    margin-bottom: 0.313em;
+}
+
+.line-item-pricing-info {
+    margin-bottom: 0;
+
+    + .price {
+        font-size: 1em;
+        font-weight: bolder;
+    }
+}
+
+.line-item-price-quantity-info {
+    margin-top: 0.625em;
+    border-top: 1px solid $horizontal-rule-grey;
+}
+
+.line-item-total-text {
+    font-size: 0.813em;
+}
+
+.product-card-footer {
+    background-color: #f3f2f2;
+}
+
+.pricing {
+    font-size: 14px;
+    font-weight: 600;
+
+    &--minicart {
+        font-size: 14px;
+    }
+}
+
+.quantity-form {
+    display: inline-block;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.item-image {
+    height: 5.625em;
+    width: 5.625em;
+    margin-right: 0.938em;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    img.product-image {
+        display: block;
+        margin: 0 auto;
+        max-width: 100px;
+        height: auto;
+        max-height: 5.625em;
+        border-radius: 5px;
+    }
+}
+
+.non-adjusted-price {
+    display: none;
+}
+
+.line-item-promo {
+    color: $success;
+    font-size: 0.813em;
+}
+
+.line-item-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.bundled-line-item + .bundled-line-item {
+    margin-top: 0.625em;
+}
+
+.bundle-includes {
+    font-size: 0.813em;
+    margin-bottom: 0.625em;
+}
+
+.line-item-divider {
+    margin: 0.625em -1.225em 0.625em -1.325em;
+}
+
+.line-dotted {
+    border-top: 0.063em dashed #ccc;
+}
+
+.line-item-availability {
+    font-size: 0.813rem;
+}
+
+.product-line-item-details {
+    overflow-y: auto;
+    text-decoration: none;
+}

@@ -1,0 +1,312 @@
+.modal-background {
+    background-color: $black;
+    display: none;
+    height: 100%;
+    position: fixed;
+    opacity: 0.5;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+input[placeholder] {
+    text-overflow: ellipsis;
+}
+
+.hide-order-discount {
+    display: none;
+}
+
+.hide-shipping-discount {
+    display: none;
+}
+
+.order-discount {
+    color: $success;
+}
+
+.shipping-discount {
+    color: $success;
+}
+
+.error-messaging {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.error-hero {
+    // background-image: url('../images/storelocator.jpg');
+    margin-bottom: 0.625em;
+}
+
+.error-message {
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+}
+
+.error.continue-shopping {
+    margin-bottom: 6.25em;
+}
+
+.error-unassigned-category {
+    color: $red;
+}
+
+.skip {
+    position: absolute;
+    left: 0;
+    top: -4.2em;
+    overflow: hidden;
+    padding: 1em 1.5em;
+    background: $white;
+    transition: all 0.2s ease-in-out;
+}
+
+a.skip:active,
+a.skip:focus,
+a.skip:hover {
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+    z-index: 10000000;
+    background: $white;
+    transition: all 0.2s ease-in-out;
+}
+
+.card-header-custom {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.error-page {
+    padding: 50px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 840px;
+    margin: 0 auto;
+    font-weight: 300;
+
+    .error-page-title {
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        font-size: 23px;
+        font-weight: 300;
+        color: $grey7;
+        margin-bottom: 15px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .error-page-image {
+        display: inline-block;
+        margin-bottom: 30px;
+        max-width: 100vw;
+
+        @include media-breakpoint-up(md) {
+            max-width: 800px;
+        }
+    }
+
+    .error-page-message {
+        position: relative;
+        padding: 0 40px;
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 16px;
+
+        @include media-breakpoint-up(md) {
+            font-size: 22px;
+            margin-bottom: 50px;
+        }
+    }
+
+    .error-page-button {
+        margin: 0 auto 30px;
+        max-width: 370px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        background-color: $pink;
+        font-size: 16px;
+        font-weight: 600;
+        color: $white;
+
+        @include media-breakpoint-up(md) {
+            margin: 0 auto 50px;
+        }
+    }
+
+    .error-page-footer {
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        width: 100%;
+
+        @include media-breakpoint-up(md) {
+            padding: 50px;
+        }
+
+        &::after {
+            content: "";
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            background-color: $grey3;
+            transform: translate(-50%, 0%);
+            @include media-breakpoint-up(md) {
+                width: 60%;
+            }
+        }
+
+        .error-page-text {
+            margin: 0 0 36px;
+            font-weight: 500;
+            font-size: 14px;
+
+            @include media-breakpoint-up(md) {
+                font-weight: 300;
+                font-size: 22px;
+            }
+
+            .text {
+                display: block;
+                color: $pink;
+            }
+        }
+    }
+
+    .footer-bottom-social {
+        width: 100%;
+    }
+
+    .footer-bottom-social-list {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-between;
+        padding: 0;
+        max-width: 125px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .footer-bottom-social-item {
+        align-items: center;
+        background: $white-smock;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        transition: all 0.5s;
+
+        &:last-child {
+            margin: 0;
+        }
+    }
+
+    .i-facebook,
+    .i-instagram {
+        height: 30px;
+        width: 30px;
+
+        &::before {
+            transition: all 0.5s;
+        }
+    }
+
+    .facebook {
+        &:hover {
+            background: $social-facebook;
+
+            .i-facebook {
+                @extend %icon-facebook--white;
+            }
+        }
+    }
+
+    .instagram {
+        &:hover {
+            background: $social-instagram;
+
+            .i-instagram {
+                @extend %icon-instagram--white;
+            }
+        }
+    }
+
+    .footer-bottom-social-link {
+        font-size: 22px;
+        padding: 10px;
+    }
+}
+
+.arrow-block {
+    .arrow-block-link {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        width: 36px;
+        height: 36px;
+        top: 50%;
+        left: 50%;
+        background-color: $grey2;
+        border: 3px solid $white;
+        transform: translate(-50%, -50%) rotate(45deg);
+
+        @include media-breakpoint-up(md) {
+            width: 60px;
+            height: 60px;
+            border: 10px solid $white;
+        }
+
+        @include media-breakpoint-up(lg) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .arrow-block-link {
+        .icon {
+            transform: translate(-50%, -50%) rotate(-45deg);
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            text-align: center;
+
+            @include media-breakpoint-up(md) {
+                width: 26px;
+                height: 26px;
+            }
+
+            @include media-breakpoint-up(lg) {
+                width: 45px;
+                height: 45px;
+            }
+        }
+    }
+}
+
+.no-scroll {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}

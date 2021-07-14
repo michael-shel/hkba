@@ -1,0 +1,16 @@
+.calendar-container .react-calendar {
+    width: 100%;
+}
+
+.calendar-container .react-calendar__tile {
+  padding: 1em 0em;
+}
+
+.calendar-container .react-calendar__navigation {
+  height: 80px;
+}
+
+.calendar-container .react-calendar__navigation button {
+  min-width: 100px;
+  font-size: 24px;
+}
